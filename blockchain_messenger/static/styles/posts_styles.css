@@ -1,0 +1,104 @@
+.sendpostwhite {
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	outline: 2px solid #FFFFFF;
+	padding:30px 60px;
+	position: absolute;
+	overflow: hidden;
+	transition: color 1s;
+	cursor: pointer;
+}
+.sendpostwhite:hover{
+	color: #000000
+}
+.sendpostwhite::before{
+	content: "";
+	position: relative;
+	width: 0%;
+	top: 0px;
+	left: -50px;
+	height: 100%;
+	background-color: #FFFFFF;
+	transform: skew(35deg);
+	z-index: -1;
+	transition: width 1s;
+}
+.sendpostwhite:hover::before{
+	width: 150%;
+}
+.blockchainwhite {
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	outline: 2px solid #FFFFFF;
+	padding:30px 60px;
+	position: absolute;
+	overflow: hidden;
+	transition: color 1s;
+	cursor: pointer;
+}
+.blockchainwhite:hover{
+	color: #000000
+}
+.blockchainwhite::before{
+	content: "";
+	position: absolute;
+	width: 0%;
+	top: 0px;
+	left: -50px;
+	height: 100%;
+	background-color: #FFFFFF;
+	transform: skew(35deg);
+	z-index: -1;
+	transition: width 1s;
+}
+.blockchainwhite:hover::before{
+	width: 150%;
+}
+.loader {
+    width: 480px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.loader span{
+    font-size: 88px;
+    text-transform: uppercase;
+    margin: auto;
+}
+.ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    animation: bounce .5s alternate
+    infinite;
+}
+.ball:nth-child(2) {
+    animation-delay: .16s;
+}
+.ball:nth-child(3) {
+    animation-delay: .32s;
+}
+@keyframes bounce {
+    from {
+        transform: scaleX(1.25);
+    }
+    to {
+        transform: 
+        translateY(-50px) scaleX(1);
+    }
+}
+.postcontent {
+	box-sizing: content-box;
+	width: 400px;
+	height: 100px;
+	border: 15px white;
+	background-color: white;
+	padding: 20px;
+}

@@ -1,0 +1,64 @@
+<html>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/posts_styles.css') }}">
+    <head>
+	<meta charset="utf-8">
+        <style>
+            body {
+            background-color:black;
+        	color:white;
+        	text-align:center;
+            }
+        </style>
+    </head>
+    <body id="body">
+        {% macro get_feed(key, value) %}
+		<article>
+		<div class="postcontent" style="color: black; box-sizing: content-box; width: 30%; background-color: white">
+			<h1>{{key}}</h1>
+            <p>{{value}}</p>
+        </div>
+		</article><br>
+		{% endmacro %}
+		<div>
+		{% for key, value in posts.items() %}
+		{{ get_feed(key, value) }}
+        {% endfor %}
+        </div>
+		<div>
+            <form action="/message" method = "POST">
+			<p id="texttitle" style="position: absolute; top: 20%; right: 10%; font-size: 40px">Send Message Here</p>
+			<p><textarea type = "input" id="textbox" name = "Message" style="height: 100px; width:400px; position: absolute; top: 40%; right: 10%; font-size: 25px" required></textarea></p>
+			<p><input type="submit" id="submit" style="display: none"></p>
+			</form>
+			<a href="javascript:submit()" class="blockchainwhite" style="position: absolute; right: 10%; top: 60%">Send a Message</a>
+        </div>
+		<div>
+		<a href="/blockchain" class="blockchainwhite" id="blockchain" style="position: absolute; top: 80%; right: 40%; display: block">Go to Blockchain</a>
+		</div>
+		<div class="loader" style="display: none; position: absolute; right: 10%; top: 20%; height: 200px; width: 350px" id="loading">
+			<div class="ball" style="display: none" id="ball"></div>
+			<div class="ball" style="display: none" id="ball2"></div>
+			<div class="ball" style="display: none" id="ball3"></div>
+			<span>Minting...</span>
+		</div>
+		<script>
+			function submit(){
+			document.getElementById("submit").click();
+			var blockchain = document.getElementById("blockchain");
+			blockchain.style.display = "block";
+			var loader = document.getElementById("loading");
+			loader.style.display = "flex";
+			var ball = document.getElementById("ball");
+			ball.style.display= "block";
+			var ball2 = document.getElementById("ball2");
+			ball2.style.display= "block";
+			var ball3 = document.getElementById("ball3");
+			ball3.style.display= "block";
+			var textbox = document.getElementById("textbox");
+			textbox.style.display = "none";
+			var texttitle = document.getElementById("texttitle");
+			texttitle.style.display = "none";
+			}
+		</script>
+    </body>
+</html>
